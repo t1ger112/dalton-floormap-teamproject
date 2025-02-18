@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+input{
+    border: none;
+}
+
+#searchButton{
+    padding: 0;
+    background:none;
+    border: none;
+}
+.searchoutercontainer{
+    padding-bottom:1%;
+    padding-left: 1%;
+    float: left;
+    position: fixed;
+    bottom: 0;
+}
+
+.searchcontainer{
+    width: auto;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.searchcontent{
+    /* padding-left: 1%; */
+   display: flex; 
+}
