@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles.css" >
+    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>simple search bar</title>
+    <title>Filterable Search Bar</title>
 </head>
 <body>
     <div class="searchoutercontainer">
         <div class="searchcontainer">
             <div class="searchcontent">
-                <form>
-                    <p> From | <input type="text" id="from" placeholder="Start-Location"></p> 
-                    <p> To | <input type="text" id="to" placeholder="End-Location"></p>
+                <form onsubmit="return false;">
+                    <p> From | <input type="text" id="from" placeholder="Start-Location" onkeyup="filterList('from')"></p>
+                    <div id="fromList" class="option-list"></div>
+
+                    <p> To | <input type="text" id="to" placeholder="End-Location" onkeyup="filterList('to')"></p>
+                    <div id="toList" class="option-list"></div>
+
                     <button id="searchButton">
-                    <img src="./assets/searchbutton.png" width="25px" height="25px" />
+                        <img src="./assets/searchbutton.png" width="25px" height="25px" />
                     </button>
                 </form>
             </div>
