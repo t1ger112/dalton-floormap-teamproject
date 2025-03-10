@@ -1,0 +1,420 @@
+*{
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+:root {
+    --color1: #6495ed;
+    --color2: #ffffff;
+    
+    --top-accent-1: #bebebe;
+    --top-accent-2: #4b4b4b;
+    --top-btn-border: #818181;
+    --top-btn-accent: #bebebe;
+    --top-btn-hover: #a8a8a8;
+
+    --searchbar-text: 1.5rem;
+}
+
+
+body{
+    margin: 0px;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+    background-color: var(--color2);
+}
+
+
+
+
+
+
+.topbar-container{
+    background-color: var(--top-accent-2);
+    width: auto;
+    height: 12vh;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    grid-template-rows: 100%;
+}
+
+.hidden-tbx{
+    display: none;
+}
+
+.left-top-cont{
+    position: relative;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.mid-top-cont{
+    position: relative;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-top-cont{
+    position: relative;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.top-btn{
+    background-color: var(--top-accent-1);
+    border-radius: 5px;
+    border-style: solid;
+    border-color: var(--top-btn-border);
+    position: relative;
+    height: 70px;
+    width: 70px;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    justify-content: center;
+    transition: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.top-btn:hover{
+    background-color: var(--top-btn-hover); 
+}
+
+.menu-main-btn-cont{
+    margin-left: 5px;
+    padding: 10px;
+}
+
+.menu-main-btn{
+    padding-top: 7px;
+    background: none;
+    border-style: none;
+    cursor: pointer;
+    scale: 1.3;
+    transition: 0.15s;
+    transition-timing-function: ease-in-out;
+}
+
+.menu-main-btn:hover{
+    scale: 1.45;
+}
+
+#menu-icon{
+    fill: var(--color2);
+    transition: 0.2s;
+}
+
+#menu-icon:hover{
+    fill: #dadada;
+}
+
+
+
+
+.liftStair-pref-selector-slr{
+    display: flex;
+    align-items: center;
+}
+
+.liftStair-pref-selector-cont{
+    background-color: var(--top-btn-border);
+    margin: 5px;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 30px;
+    height: 50px;
+    width: auto;
+    display: flex;
+    overflow: hidden;
+}
+
+.pref-btn{
+    background-color: #ffffff00;
+    border-radius: 5px;
+    border-style: none;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+    padding: 5px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.pref-btn:hover{
+    background-color: var(--top-btn-hover);
+}
+
+.stair-pref-btn{
+    margin: 2px 2px 2px 8px;
+}
+
+.stair-pref-btn:hover{
+}
+
+.lift-pref-btn{
+    margin: 2px 8px 2px 2px;
+}
+
+.lift-pref-btn:hover{
+}
+
+.topbar-title-text-cont{
+}
+
+#topbar-title-text{
+    font-size: 30px;
+    color: #ffffff;
+    cursor: default;
+    transition: 0.2s;
+}
+
+#topbar-title-text:hover{
+    font-size: 32px;
+}
+
+
+
+
+
+
+
+
+.floorSelect-container{
+    display: grid;
+    width: 220px;
+    grid-template-columns: 50px 120px 50px;
+    grid-template-rows: 20% 80%;
+    background-color: var(--color2);
+    padding: 5px;
+    border-radius: 15px;
+    height: 60px;
+}
+
+.floorSelect-downBtn-selector{
+    position: relative;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    display: flex;
+    align-items: center;
+    width: 50px;
+    border-radius: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+    align-self: flex-start;
+    height: 60px;
+}
+
+.floorSelect-upBtn-selector{
+    position: relative;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    display: flex;
+    align-items: center;
+    width: 50px;
+    border-radius: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+    align-self: flex-end;
+    height: 60px;
+}
+
+.selector-arrows{
+    
+}
+
+.floorSelect-text-label{
+    justify-self: center;
+}
+
+.floorSelect-floorNumber-graphic{
+    justify-self: center;
+}
+
+.floorSelect-text{
+    font-size: 38px;
+}
+
+
+
+
+
+
+
+.option-list {
+    display: block;
+    max-height: 20rem;
+    width: auto;
+    overflow: auto;
+    position: absolute;
+}
+
+.search-list-item{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0;
+    border-color:  var(--top-btn-border);
+    background-color: var(--top-btn-accent);
+    padding: 5px;
+    cursor: pointer;
+}
+
+.searchoutercontainer{
+    position: absolute;
+    bottom: 25px;
+    left: 4vw;
+    display: flex;
+}
+
+.searchcontainer{
+    background-color: var(--top-accent-1);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 40px;
+    
+    padding-left: 30px;
+    padding-right: 25px;
+    
+    height: 4.75rem;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 94% auto;
+
+    justify-items: center;
+    align-content: center;
+}
+
+.searchlistcontainer{
+    position: absolute;
+    visibility: hidden;
+}
+
+.searchcontent{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.search-btn-area {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+
+#fromList{
+    bottom: 5em;
+    left: 9vw;
+    width: 30vw;
+    overflow: auto;
+}
+
+#toList {
+    bottom: 5em;
+    left: 45vw;
+    width: 30vw;
+}
+
+#to {
+    width: 80%;
+    height: 40px;
+    border-style:solid;
+    border-width: 2px;
+    border-color: var(--top-btn-border);
+    border-radius: 25px; 
+    padding-left: 20px 
+}
+
+#from {
+    width: 80%;
+    height: 40px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--top-btn-border);
+    border-radius: 25px;
+    padding-left: 20px
+}
+
+#search-rooms-btn {
+    border-style: none;
+    background: none;
+    transition: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+#search-rooms-btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.search-area-from {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-area-to {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbar-text {
+    font-size: var(--searchbar-text);
+    padding-right: 10px;
+}
+
+
+
+
+
+
+
+
+.content-container {
+    background-color: aqua;
+    width: 100%;
+    height: 88vh;
+    display: flex;
+}
+
+
+
+@media (max-width: 47rem) {
+
+    #topbar-title-text-cont {
+        display: none;
+    }
+
+}
+
+@media (max-width: 30rem) {
+
+    .liftStair-pref-selector-slr {
+        display: none;
+    }
+
+    .topbar-container {
+        padding-left: 20px;
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8" version="0.0.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+    <title>MMU Floorplanner</title>
+</head>
+
+<body>
+    <div class="topbar-container">
+        <div class="left-top-cont">
+            <div class="menu-main-btn-cont">
+                <input id=" menu-main-tbx-open" class="hidden-tbx" type="checkbox"></input>
+                <button class="menu-main-btn">
+                    <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" height="50px" width="50px" viewBox="0 -960 960 960" ><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" /></svg>
+                </button>
+            </div>
+            <div class="liftStair-pref-selector-slr">
+                <div class="liftStair-pref-selector-cont">
+                    <input id="liftStair-pref-liftsSelected-tbx" class="hidden-tbx" type="checkbox"></input>
+                    <button class="pref-btn stair-pref-btn">STAIR</button>
+                    <button class="pref-btn lift-pref-btn">LIFTS</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mid-top-cont">
+            <div id="topbar-title-text-cont">
+                <a id="topbar-title-text">MMU Floorplanner</a>
+            </div>
+        </div>
+
+        <div class="right-top-cont">
+            <div class="floorSelect-container">
+                <button class="top-btn floorSelect-downBtn-selector">
+                    <svg class="selector-arrows" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
+                </button>
+                <button class="top-btn floorSelect-upBtn-selector">
+                    <svg class="selector-arrows" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
+                </button>
+                <a class="floorSelect-text-label">Floor:</a>
+                <div class="floorSelect-floorNumber-graphic">
+                    <a class="floorSelect-text">G 1 2</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="controls-container">
+
+        <div class="searchoutercontainer">
+            <div class="searchcontainer">
+                <form class="searchcontent" onsubmit="return false;">
+                    <div class="search-area-from">
+                        <a class="searchbar-text">From:</a>
+                        <input type="text" id="from" placeholder="Start-Location" onkeyup="filterList('from')">
+                    </div>
+                    <div id="fromList" class="option-list"></div>
+                    <div class="search-area-to">
+                        <a class="searchbar-text">To:</a>
+                        <input type="text" id="to" placeholder="End-Location" onkeyup="filterList('to')">
+                    </div>
+                    <div id="toList" class="option-list"></div>
+                </form>
+                <div class="search-btn-area">
+                    <button id="search-rooms-btn">
+                        <svg id="search-btn" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#1f1f1f"><path d="M790.67-89.33 525-354.33q-29 21.95-68.14 34.64Q417.72-307 372-307q-116.11 0-196.89-80.83-80.78-80.84-80.78-195.5 0-114.67 80.84-195.5Q256-859.67 371-859.67q115 0 195.5 80.84Q647-698 647-583.23q0 45.23-12.33 83.4-12.34 38.16-35.67 70.16L865.67-164l-75 74.67Zm-419.1-322.34q71.93 0 121.35-50 49.41-50 49.41-121.66 0-71.67-49.51-121.67-49.52-50-121.25-50-72.29 0-122.43 50T199-583.33q0 71.66 50.04 121.66t122.53 50Z" /></svg>
+                    </button>
+                </div>
+         
+            </div>
+        </div>
+        <script src="./src/searchbar.js"></script>
+
+    </div>
+
+
+
+
+    <div class="content-container">
+        <div>
+            <a> # </a>
+        </div>
+        <div>
+            <a> </a>
+        </div>
+    </div>
+</body>
+
+</html>
