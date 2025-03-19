@@ -78,48 +78,54 @@ function displayFullList(inputId) {
     let listDiv = document.getElementById(inputId + "List");
     listDiv.innerHTML = "";
     
+    
     ground.forEach(item => {
         let div = document.createElement("div");
         div.className = "aClass";
-        div.innerHTML = item;
+        div.innerHTML = item[1];
         div.onclick = function() {
-            document.getElementById(inputId).value = item;
+            document.getElementById(inputId).value = item[1];
         };
         listDiv.appendChild(div);
     });
 }
 
 function filterList(inputId) {
-    let inputValue = document.getElementById(inputId).value.toLowerCase();
+    let inputValue = document.getElementById(inputId).value.toUpperCase();
     let listDiv = document.getElementById(inputId + "List");
     
     listDiv.innerHTML = "";
 
-    let filteredResults = ground.filter(item => item.toLowerCase().includes(inputValue));
+    let filteredResults = ground.filter(item => item[1].toUpperCase().includes(inputValue));
 
     filteredResults.forEach(item => {
         let div = document.createElement("div");
-        div.innerHTML = item;
+        div.innerHTML = item[1];
         console.log(`The item is ${item}`);
         div.onclick = function() {
-            document.getElementById(inputId).value = item;
+            document.getElementById(inputId).value = item[1];
         };
         listDiv.appendChild(div);
     });
 }
 
-// Function to validate inputs when search button is clicked
 function inputValidation() {
     let from = document.getElementById("from").value;
     let to = document.getElementById("to").value;
+    from = from.toUpperCase();
+    to = to.toUpperCase();
+    
+    let fromValid = ground.some(item => item[1] === from);
+    let toValid = ground.some(item => item[1] === to);
 
-    if (!ground.includes(from) || !ground.includes(to)) {
+    if (!fromValid || !toValid) {
         alert("Invalid selection. Please select from the list.");
         return;
     }
 
     alert(`From: ${from} | To: ${to}`);
 }
+
 
 // Add event listener to search button
 document.getElementById("searchButton").addEventListener("click", inputValidation);
