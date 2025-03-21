@@ -5,31 +5,31 @@ const ground = [
     ["E001", "G.20", "L002", ""],
     ["E002", "G.21", "L004", ""],
     ["E003", "G.22", "L005", ""],
-    ["EL004", "West Stairs", "L006", "West Stairs"],
-    ["EL005", "West Lift", "L006", "West Lift"],
-    ["E006", "Canteen", "L012", "Canteen"],
-    ["EL007", "Main Stairs", "L018", "Main Stairs"],
-    ["EL008", "Main Lifts", "L016", "Main Lifts"],
-    ["E009", "Reception", "L015", "Reception"],
-    ["E010", "Main Enterance", "L015", "Main Enterance"],
+    ["EL004", "West Stairs", "L006", "WEST STAIRS"],
+    ["EL005", "West Lift", "L006", "WEST LIFT"],
+    ["E006", "Canteen", "L012", "CANTEEN"],
+    ["EL007", "Main Stairs", "L018", "MAIN STAIRS"],
+    ["EL008", "Main Lifts", "L016", "MAIN LIFTS"],
+    ["E009", "Reception", "L015", "RECEPTION"],
+    ["E010", "Main Enterance", "L015", "MAIN ENTERANCE"],
     ["E011", "G.34", "L019", ""],
-    ["EL012", "Tower Lifts/Stairs", "L019", "Tower Lifts/Stairs"],
+    ["EL012", "Tower Lifts/Stairs", "L019", "TOWER LIFTS/STAIRS"],
     ["EL013", "G.26a", "L021", ""],
     ["E014", "G.26b", "EL013", ""],
     ["E015", "G.26", "EL013", ""],
-    ["E016", "G.37 Lecture Theatre", "L024", "G.37 Lecture Theatre"],
+    ["E016", "G.37 Lecture Theatre", "L024", "G.37 LECTURE THEATRE"],
     ["E017", "G.30", "L031", ""],
     ["EL018", "G.39", "L028", ""],
-    ["EL019", "C-Block Lift", "L029", "C-Block Lift"],
-    ["EL020", "C-Block West-Stairs", "L033", "C-Block West-Stairs"],
-    ["E021", "Computer Area", "L029", "Computer Area"],
+    ["EL019", "C-Block Lift", "L029", "C-BLOCK LIFT"],
+    ["EL020", "C-Block West-Stairs", "L033", "C-BLOCK WEST-STAIRS"],
+    ["E021", "Computer Area", "L029", "COMPUTER AREA"],
     ["E022", "G.40", "EL018", ""],
     ["E023", "G.39a", "EL018", ""],
     ["E024", "G.39b", "EL018", ""],
     ["E025", "G.41", "L035", ""],
     ["E026", "G.44", "L034", ""],
-    ["E027", "G.42 Lecture Theatre", "L037", "G.42 Lecture Theatre"],
-    ["EL028", "C-Block East-Stairs", "L037", "C-Block East-Stairs"],
+    ["E027", "G.42 Lecture Theatre", "L037", "G.42 LECTURE THEATRE"],
+    ["EL028", "C-Block East-Stairs", "L037", "C-BLOCK EAST-STAIRS"],
     ["L002", "!NOSEARCH", "E001, L003", ""],
     ["L003", "!NOSEARCH", "L002, L004", ""],
     ["L004", "!NOSEARCH", "L003, L005, E002", ""],
@@ -66,7 +66,8 @@ const ground = [
     ["L035", "!NOSEARCH", "L028, L036, E025", ""],
     ["L036", "!NOSEARCH", "L035, L037", ""],
     ["L037", "!NOSEARCH", "L036, E027, EL028", ""]
-  ];
+];
+
   
 // Display full list on page load 
 window.onload = function() {
@@ -82,7 +83,7 @@ function displayFullList(inputId) {
     ground.forEach(item => {
         let div = document.createElement("div");
         div.className = "aClass";
-        div.innerHTML = item[1];
+        div.innerHTML = item[1].toUpperCase();
         div.onclick = function() {
             document.getElementById(inputId).value = item[1];
         };
@@ -110,13 +111,13 @@ function filterList(inputId) {
 }
 
 function inputValidation() {
-    let from = document.getElementById("from").value;
-    let to = document.getElementById("to").value;
-    from = from.toUpperCase();
-    to = to.toUpperCase();
+    let from = document.getElementById("from").value.toUpperCase();
+    let to = document.getElementById("to").value.toUpperCase();
+    // from = from.toUpperCase();
+    // to = to.toUpperCase();
     
-    let fromValid = ground.some(item => item[1] === from);
-    let toValid = ground.some(item => item[1] === to);
+    let fromValid = ground.some(item => item[1].toUpperCase() === from);
+    let toValid = ground.some(item => item[1].toUpperCase() === to);
 
     if (!fromValid || !toValid) {
         alert("Invalid selection. Please select from the list.");
